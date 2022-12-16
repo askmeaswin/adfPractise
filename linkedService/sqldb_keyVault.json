@@ -1,0 +1,19 @@
+{
+	"name": "sqldb_keyVault",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=adebatch3.database.windows.net;Initial Catalog=mission100ade;User ID=azurelib",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "KeyVault_ls",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "mydbpassword"
+			}
+		}
+	}
+}

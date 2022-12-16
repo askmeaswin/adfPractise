@@ -1,0 +1,9 @@
+{
+	"name": "AdeExercises",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "2cd4865b-fed7-4ea4-b854-1ac40b5c22cc",
+		"tenantId": "6a9d4497-452f-4abb-9d12-4a36dc759d53"
+	}
+}

@@ -1,0 +1,41 @@
+{
+	"name": "sql_db_generic_ds",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "sql_generic_link",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"userName": {
+					"value": "@dataset().userName_DS_Param",
+					"type": "Expression"
+				}
+			}
+		},
+		"parameters": {
+			"schemaName": {
+				"type": "string",
+				"defaultValue": "saleslt"
+			},
+			"tableName": {
+				"type": "string"
+			},
+			"userName_DS_Param": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": {
+				"value": "@dataset().schemaName",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().tableName",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

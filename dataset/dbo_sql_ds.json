@@ -1,0 +1,28 @@
+{
+	"name": "dbo_sql_ds",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "dbo_sql_ls",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "TableName",
+				"type": "varchar"
+			},
+			{
+				"name": "lastModified",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "HWMT"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
