@@ -1,0 +1,12 @@
+{
+	"name": "restapi_ds",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "resrapi_ls",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"schema": []
+	}
+}
