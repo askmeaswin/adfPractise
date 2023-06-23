@@ -1,0 +1,9 @@
+{
+	"name": "ravins",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "45534812-d772-4bcc-b14d-b8b296448e81",
+		"tenantId": "73fa27b5-866c-48b8-8110-14a533ef844c"
+	}
+}

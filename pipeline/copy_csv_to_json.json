@@ -1,0 +1,135 @@
+{
+	"name": "copy_csv_to_json",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "JsonSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "JsonWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "EMPNO",
+									"type": "String"
+								},
+								"sink": {
+									"path": "EmpNo"
+								}
+							},
+							{
+								"source": {
+									"name": "ENAME",
+									"type": "String"
+								},
+								"sink": {
+									"path": "EmpName"
+								}
+							},
+							{
+								"source": {
+									"name": "JOB",
+									"type": "String"
+								},
+								"sink": {
+									"path": "Job"
+								}
+							},
+							{
+								"source": {
+									"name": "MGR",
+									"type": "String"
+								},
+								"sink": {
+									"path": "Mgr"
+								}
+							},
+							{
+								"source": {
+									"name": "HIREDATE",
+									"type": "String"
+								},
+								"sink": {
+									"path": "HireDate"
+								}
+							},
+							{
+								"source": {
+									"name": "SAL",
+									"type": "String"
+								},
+								"sink": {
+									"path": "Salary"
+								}
+							},
+							{
+								"source": {
+									"name": "COMM",
+									"type": "String"
+								},
+								"sink": {
+									"path": "Communication"
+								}
+							},
+							{
+								"source": {
+									"name": "DEPTNO ",
+									"type": "String"
+								},
+								"sink": {
+									"path": "DeptNo"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "csvDelimiter",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "jsonDS",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2023-06-23T13:06:32Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

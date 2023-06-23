@@ -1,0 +1,19 @@
+{
+	"name": "jsonDS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "JsonLS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "ravdata"
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
