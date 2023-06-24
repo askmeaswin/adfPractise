@@ -1,0 +1,72 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ravins"
+		},
+		"JsonLS_connectionString": {
+			"value": ""
+		},
+		"SQL_LS_DB_connectionString": {
+			"value": ""
+		},
+		"SQL_LS_Data_connectionString": {
+			"value": ""
+		},
+		"adls_ds_accountKey": {
+			"value": ""
+		},
+		"adls_generic_ls_accountKey": {
+			"value": ""
+		},
+		"csv_LinkedService_connectionString": {
+			"value": ""
+		},
+		"dbo_sql_ls_connectionString": {
+			"value": ""
+		},
+		"ls_address_csv_accountKey": {
+			"value": ""
+		},
+		"ls_customer_csv_accountKey": {
+			"value": ""
+		},
+		"ls_product_accountKey": {
+			"value": ""
+		},
+		"sql_LS_connectionString": {
+			"value": ""
+		},
+		"sql_db_connection_ls_connectionString": {
+			"value": ""
+		},
+		"sql_generic_link_connectionString": {
+			"value": ""
+		},
+		"sqldb_keyVault_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=adebatch3.database.windows.net;Initial Catalog=mission100ade;User ID=azurelib"
+		},
+		"KeyVault_ls_properties_typeProperties_baseUrl": {
+			"value": "https://mission100kv.vault.azure.net/"
+		},
+		"adls_ds_properties_typeProperties_url": {
+			"value": "https://rav1.dfs.core.windows.net/"
+		},
+		"adls_generic_ls_properties_typeProperties_url": {
+			"value": "https://ademission100.dfs.core.windows.net/"
+		},
+		"ls_address_csv_properties_typeProperties_url": {
+			"value": "https://ademission100.dfs.core.windows.net/"
+		},
+		"ls_customer_csv_properties_typeProperties_url": {
+			"value": "https://ademission100.dfs.core.windows.net/"
+		},
+		"ls_product_properties_typeProperties_url": {
+			"value": "https://ademission100.dfs.core.windows.net/"
+		},
+		"resrapi_ls_properties_typeProperties_url": {
+			"value": "https://restcountries.com/v2/all"
+		}
+	}
+}

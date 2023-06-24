@@ -1,0 +1,250 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "ravins"
+		},
+		"JsonLS_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'JsonLS'"
+		},
+		"SQL_LS_DB_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SQL_LS_DB'"
+		},
+		"SQL_LS_Data_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SQL_LS_Data'"
+		},
+		"adls_ds_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'adls_ds'"
+		},
+		"adls_generic_ls_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'adls_generic_ls'"
+		},
+		"csv_LinkedService_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'csv_LinkedService'"
+		},
+		"dbo_sql_ls_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'dbo_sql_ls'"
+		},
+		"ls_address_csv_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_address_csv'"
+		},
+		"ls_customer_csv_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_customer_csv'"
+		},
+		"ls_product_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_product'"
+		},
+		"sql_LS_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'sql_LS'"
+		},
+		"sql_db_connection_ls_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'sql_db_connection_ls'"
+		},
+		"sql_generic_link_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'sql_generic_link'"
+		},
+		"sqldb_keyVault_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'sqldb_keyVault'",
+			"defaultValue": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=adebatch3.database.windows.net;Initial Catalog=mission100ade;User ID=azurelib"
+		},
+		"KeyVault_ls_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://mission100kv.vault.azure.net/"
+		},
+		"adls_ds_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://rav1.dfs.core.windows.net/"
+		},
+		"adls_generic_ls_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://ademission100.dfs.core.windows.net/"
+		},
+		"ls_address_csv_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://ademission100.dfs.core.windows.net/"
+		},
+		"ls_customer_csv_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://ademission100.dfs.core.windows.net/"
+		},
+		"ls_product_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://ademission100.dfs.core.windows.net/"
+		},
+		"resrapi_ls_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://restcountries.com/v2/all"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "ravins_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"JsonLS_connectionString": {
+						"value": "[parameters('JsonLS_connectionString')]"
+					},
+					"SQL_LS_DB_connectionString": {
+						"value": "[parameters('SQL_LS_DB_connectionString')]"
+					},
+					"SQL_LS_Data_connectionString": {
+						"value": "[parameters('SQL_LS_Data_connectionString')]"
+					},
+					"adls_ds_accountKey": {
+						"value": "[parameters('adls_ds_accountKey')]"
+					},
+					"adls_generic_ls_accountKey": {
+						"value": "[parameters('adls_generic_ls_accountKey')]"
+					},
+					"csv_LinkedService_connectionString": {
+						"value": "[parameters('csv_LinkedService_connectionString')]"
+					},
+					"dbo_sql_ls_connectionString": {
+						"value": "[parameters('dbo_sql_ls_connectionString')]"
+					},
+					"ls_address_csv_accountKey": {
+						"value": "[parameters('ls_address_csv_accountKey')]"
+					},
+					"ls_customer_csv_accountKey": {
+						"value": "[parameters('ls_customer_csv_accountKey')]"
+					},
+					"ls_product_accountKey": {
+						"value": "[parameters('ls_product_accountKey')]"
+					},
+					"sql_LS_connectionString": {
+						"value": "[parameters('sql_LS_connectionString')]"
+					},
+					"sql_db_connection_ls_connectionString": {
+						"value": "[parameters('sql_db_connection_ls_connectionString')]"
+					},
+					"sql_generic_link_connectionString": {
+						"value": "[parameters('sql_generic_link_connectionString')]"
+					},
+					"KeyVault_ls_properties_typeProperties_baseUrl": {
+						"value": "[parameters('KeyVault_ls_properties_typeProperties_baseUrl')]"
+					},
+					"adls_ds_properties_typeProperties_url": {
+						"value": "[parameters('adls_ds_properties_typeProperties_url')]"
+					},
+					"adls_generic_ls_properties_typeProperties_url": {
+						"value": "[parameters('adls_generic_ls_properties_typeProperties_url')]"
+					},
+					"ls_address_csv_properties_typeProperties_url": {
+						"value": "[parameters('ls_address_csv_properties_typeProperties_url')]"
+					},
+					"ls_customer_csv_properties_typeProperties_url": {
+						"value": "[parameters('ls_customer_csv_properties_typeProperties_url')]"
+					},
+					"ls_product_properties_typeProperties_url": {
+						"value": "[parameters('ls_product_properties_typeProperties_url')]"
+					},
+					"resrapi_ls_properties_typeProperties_url": {
+						"value": "[parameters('resrapi_ls_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "ravins_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"sqldb_keyVault_connectionString": {
+						"value": "[parameters('sqldb_keyVault_connectionString')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ravins_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "ravins_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ravins_ArmTemplate_1')]"
+			]
+		},
+		{
+			"name": "ravins_ArmTemplate_3",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_3.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ravins_ArmTemplate_2')]"
+			]
+		}
+	]
+}
