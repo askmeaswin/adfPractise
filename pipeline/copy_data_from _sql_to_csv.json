@@ -52,6 +52,8 @@
 		"folder": {
 			"name": "Practice"
 		},
-		"annotations": []
-	}
+		"annotations": [],
+		"lastPublishTime": "2023-06-24T14:30:41Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
 }
